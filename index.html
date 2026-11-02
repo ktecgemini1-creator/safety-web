@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>더 케이텍 안전·보건 서류 관리</title>
+<style>
+:root{--bg:#fff;--side:#f2f2f3;--tx:#1b1f27;--mu:#6b7280;--bd:#c9ced6;--nv:#003a8c;--hd:#00307a;--th:#3f3f46;--card:#f6f8fb;--hv:#eaf0fb;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14171c;--side:#1c2027;--tx:#e8eaee;--mu:#9aa1ad;--bd:#343a45;--nv:#3b6fd0;--th:#2a2f38;--card:#1b1f26;--hv:#222a3a}}
+:root[data-theme="dark"]{--bg:#14171c;--side:#1c2027;--tx:#e8eaee;--mu:#9aa1ad;--bd:#343a45;--nv:#3b6fd0;--th:#2a2f38;--card:#1b1f26;--hv:#222a3a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:"Pretendard","Noto Sans KR","Malgun Gothic",sans-serif;font-size:14px}
+header{background:var(--hd);color:#fff;display:flex;align-items:center;gap:28px;padding:0 20px;height:56px;overflow-x:auto;white-space:nowrap}
+.logo{font-weight:700;cursor:pointer;display:flex;align-items:center;gap:8px}
+.logo b{border:2px solid #fff;padding:1px 5px;font-size:11px;letter-spacing:1px}
+header a{color:#9fb6e0;font-weight:700;font-size:17px;cursor:pointer}
+header a.on{color:#fff}
+.wrap{display:flex;min-height:calc(100vh - 56px)}
+aside{width:210px;flex:none;background:var(--side);padding:24px 0}
+aside a{display:block;padding:9px 24px;color:var(--mu);cursor:pointer}
+aside a.on{color:var(--tx);font-weight:700}
+aside a.s{padding:6px 24px 6px 40px;font-size:13px}
+main{flex:1;min-width:0;padding:22px 28px 40px}
+.bc{text-align:right;font-size:11px;color:var(--mu)}
+h2{margin:6px 0 16px;font-size:20px;display:flex;align-items:center;gap:8px}
+h2:before{content:"✓";display:inline-grid;place-items:center;width:22px;height:22px;border:2px solid var(--mu);border-radius:4px;font-size:14px;color:var(--mu)}
+.fl{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;margin-bottom:12px}
+.fl label{display:flex;align-items:center;gap:8px}
+input,select{height:30px;border:1px solid var(--tx);background:var(--bg);color:var(--tx);padding:0 8px;font:inherit;border-radius:0;min-width:0}
+.fl input,.fl select{width:140px}
+button{font:inherit;cursor:pointer;background:var(--nv);color:#fff;border:0;height:30px;padding:0 14px;font-weight:700}
+button.g{background:var(--mu)}
+.bar{display:flex;justify-content:space-between;align-items:flex-end;margin:6px 0}
+.bar div{display:flex;gap:6px}
+.tw{overflow-x:auto;border:1px solid var(--tx)}
+table{border-collapse:collapse;width:100%;min-width:760px}
+th{background:var(--th);color:#fff;font-size:12px;padding:9px 6px;border-left:1px solid #fff4;white-space:nowrap}
+td{padding:8px 6px;text-align:center;border:1px dotted var(--mu);height:34px;font-size:13px}
+td a{color:var(--nv);text-decoration:underline;cursor:pointer}
+td button{height:24px;padding:0 8px;font-size:12px;background:var(--mu)}
+.em{padding:30px;color:var(--mu)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-bottom:16px}
+.cd{border:1px solid var(--bd);background:#fff;color:#1b1f27;--tx:#1b1f27;--mu:#6b7280;padding:16px;border-radius:8px}
+.cd small{color:var(--mu);display:block;margin-bottom:6px}.cd strong{font-size:26px}
+.ch{border:1px solid var(--bd);background:#fff;color:#1b1f27;--tx:#1b1f27;--mu:#6b7280;border-radius:8px;padding:16px}
+.gr{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+@media(max-width:900px){.gr{grid-template-columns:1fr}}
+.bars{display:flex;gap:6px;align-items:flex-end;height:150px;margin-top:10px;border-bottom:1px solid var(--bd)}
+.bars div{flex:1;text-align:center;font-size:11px;color:var(--mu);display:flex;flex-direction:column;justify-content:flex-end;height:100%}
+.bars i{display:block;background:var(--nv);border-radius:3px 3px 0 0;margin:0 3px}
+.mo{display:flex;gap:6px;margin-top:4px}.mo span{flex:1;text-align:center;font-size:11px;color:var(--mu)}
+dialog{border:1px solid var(--tx);background:var(--bg);color:var(--tx);padding:0;width:min(520px,94vw);max-height:90vh}
+dialog::backdrop{background:#0008}
+dialog form{padding:18px 20px;display:grid;gap:10px}
+dialog label{display:grid;grid-template-columns:130px 1fr;align-items:center;gap:8px}
+dialog h3{margin:0 0 4px}
+.act{display:flex;justify-content:flex-end;gap:8px;margin-top:6px}
+#tip{position:fixed;display:none;z-index:20;background:var(--bg);color:var(--tx);border:1px solid var(--tx);padding:8px 11px;border-radius:6px;font-size:12px;line-height:1.7;pointer-events:none;white-space:nowrap}
+.hv{fill:transparent}.hv:hover{fill:rgba(120,140,180,.18)}.dn:hover{opacity:.75}
+#t{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:#222;color:#fff;padding:10px 16px;border-radius:6px;display:none;z-index:9;max-width:90vw}
+@media(max-width:720px){.wrap{flex-direction:column}aside{width:auto;display:flex;overflow-x:auto;padding:0;white-space:nowrap}aside a,aside a.s{padding:12px 14px}main{padding:16px}}
+#wsd{width:min(1180px,96vw)}#wsd td{height:auto;padding:8px 6px;line-height:1.45}.wsh{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 18px}.wsb{padding:0 18px 18px}
+</style></head><body>
+<header><div class="logo" onclick="setGrp(0)"><b>K·TEC</b>더 케이텍㈜</div>
+<a id='n0' class='on' onclick='setGrp(0)'>안전·보건</a><a onclick="toast('안전지침/Guide는 준비 중입니다')">안전지침/Guide</a><a onclick="toast('안전 테마(월)는 준비 중입니다')">안전 테마(월)</a><a id='n1' onclick='setGrp(1)'>안전 Monitoring</a><a id='ad' style='margin-left:auto;font-size:14px' onclick='adm?logout():login()'>관리자 로그인</a></header>
+<div class="wrap"><aside id="sd"></aside><main id="mn"></main></div>
+<dialog id="dl"><form id="fm" method="dialog"></form></dialog><dialog id="wsd"><div class="wsh"><b id="wst"></b><button type="button" class="g" onclick="wsd.close()">닫기</button></div><div class="wsb" id="wsb"></div></dialog><div id="t"></div>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js'></script>
+<script>
+const T=(n,x)=>({n,x}),S=(n,o,x)=>({n,o,x}),F=n=>({n,f:1}),D=n=>({n,d:1,x:1});
+const so=['더 케이텍㈜'],bu=['1본부','2본부','3본부','4본부','중부권역본부','반도체사업본부','공항사업본부'],ji=['OS1팀','OS2팀','대전지사','제주지사','아모레지원센터','세방3물류','롯데물류화성','부산지사','광주지사','대구지사','파주지사','LGES 오창','LGC 청주','LGC 대산','글로비스 당진','SK-Hynix 이천','SK-Hynix 청주','화물사업부','케이터링사업부','의료 지원센터'];
+const b=[S('년도',['2026','2025','2024']),S('소속',so),S('본부',bu),S('지사(센터)',ji),T('사업장 명')];
+const ed=['신규','보수','정기','전문기관'];
+const P=[
+{n:'사업장 관리',t:'사업장 현황(도급)',nf:1,f:[S('소속',so),S('본부',bu),S('지사(센터)',ji),T('사업장 명'),T('계약형태',1),T('주요업무',1),T('사업장 주소',1),T('사업장 담당자',1),T('안전보건관리책임자',1),T('안전(보건)관리자',1),T('사업 개시(년)'),T('근로자(수)',1)]},
+{n:'종사자 의견청취',t:'종사자 의견청취',sub:['산업안전보건위원회','노사위원회'],f:[...b,S('분기',['1Q','2Q','3Q','4Q']),S('문서 구분',['회의록 공고문','회의록']),F('회의록')]},
+{n:'위험성 평가',t:'위험성 평가',f:[...b,S('평가 구분',['정기','수시','특별']),F('위험성 평가서')]},
+{n:'사고 보고서',t:'사고 보고서',f:[...b,S('사고 구분',['아차 사고','출·퇴근 사고','일반 사고','안전 사고','인적','물적']),D('발생일'),S('사고 유형',['넘어짐','부딪힘','떨어짐','베임','맞음','화상','끼임','근골격계','열/냉','노출','출퇴근','기타(특수형태)','어지러움(쓰러짐)','기타']),S('산업재해조사표',['작성','미작성'],1),S('산재/공상',['산재','공상','제3자 손해보상','대상아님'],1),S('도급/파견',['도급','파견']),F('사고 보고서')]},
+{n:'비상대피훈련',t:'비상대피훈련',sub:['상반기','하반기'],f:[...b,S('교육 구분',['정기안전','공정변경','신입사원','특별안전','비상대피훈련']),T('교육 강사',1),S('교육 유형',['온라인 교육','집체교육']),F('교육일지')]},
+{n:'선임계',t:'선임계',sub:['안전보건관리책임자','안전관리자','보건관리자','관리감독자'],f:[...b,T('이름',1),S('교육 형태',ed),F('선임계')]},
+{n:'안전보건 관리계획서',t:'안전보건 관리계획서',f:[...b,T('작성자',1),F('관리계획서'),T('비고',1)]},
+{n:'관리감독자 평가',t:'관리감독자 평가',sub:['상반기(1H)','하반기(2H)'],f:[...b,T('작성자',1),T('관리감독자'),F('평가서'),T('비고',1)]},
+{n:'안전 Monitoring',t:'안전 Monitoring',g:1,sub:['상반기(1H)','하반기(2H)'],f:[...b,D('점검일'),F('Monitoring Report'),D('기안서(날짜)')]},
+{n:'안전보건관리체계',t:'안전보건관리체계 (사업장)',g:1,f:[...b,S('평가 점수',['A','B','C','D','E'],1),F('평가표'),D('기안서(날짜)')]},
+{n:'안전보건관리책임자',t:'안전보건관리책임자 (평가표)',g:1,f:[...b,T('안전보건관리책임자',1),S('평가 점수',['A','B','C','D','E'],1),F('평가표'),D('기안서(날짜)')]}
+];
+const G=[[0,1,2,3,4,5,6,7],[8,9,10]];
+const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let db={};try{db=JSON.parse(localStorage.getItem('ktec-safety')||'{}')}catch(e){}
+Object.values(db).forEach(a=>Array.isArray(a)&&a.forEach(r=>{if(r.v&&r.v['지사(센터)']=='OS 1/2팀')r.v['지사(센터)']='OS1팀'}));
+const ldb=db;let cdb=null,ast=null,dnl=null,cloud={},cmode=false,bad=0;if(window.claude)db={};
+const urls={};let cur=-1,sub=0,fq={},adm=false,eid=null,grp=0;
+const save=()=>{if(cmode)return;try{localStorage.setItem('ktec-safety',JSON.stringify(db))}catch(e){}};
+const key=()=>cur+'|'+(P[cur].sub?sub:0);
+function toast(m){const t=$('#t');t.textContent=m;t.style.display='block';clearTimeout(t.h);t.h=setTimeout(()=>t.style.display='none',2600)}
+function go(i,j=0){cur=i;sub=j;fq={};draw()}
+function draw(){
+$('#n0').className=grp?'':'on';$('#n1').className=grp?'on':'';
+$('#sd').innerHTML=G[grp].map((i,k)=>{const p=P[i];return `<a class="${i==cur?'on':''}" onclick="go(${i})">${k+1}. ${p.n}</a>`+(i==cur&&p.sub?p.sub.map((s,j)=>`<a class="s ${j==sub?'on':''}" onclick="go(${i},${j})">- ${s}</a>`).join(''):'')}).join('');
+cur<0?home():page()}
+function dn(tc){const e=Object.entries(tc).sort((a,b)=>b[1]-a[1]),n=e.reduce((s,[,v])=>s+v,0),cl=['#2f6fd6','#e8833a','#2fa37a','#d8493e','#8a63d2','#e0b020','#3aa5c9','#a0668a','#6f8f3a','#c26b3a','#5b6b8c','#cc5fa0','#7a7f87','#b0903a'],r=52,C=2*Math.PI*r;let off=0;
+const arcs=e.map(([k,v],i)=>{const l=v/n*C,s=`<circle cx='70' cy='70' r='${r}' fill='none' stroke='${cl[i%cl.length]}' stroke-width='26' stroke-dasharray='${l} ${C-l}' stroke-dashoffset='${-off}' transform='rotate(-90 70 70)' class='dn' data-tip='${esc(k)}|${v}건 (${Math.round(v/n*100)}%)'/>`;off+=l;return s}).join('');
+return `<div class='ch'><b>[사고 유형 비율]</b> <span style='color:var(--mu)'>2026년</span>`+(n?`<div style='display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-top:10px'><svg viewBox='0 0 140 140' style='width:230px;max-width:100%;flex:none'>${arcs}<text x='70' y='68' text-anchor='middle' font-size='20' font-weight='700' fill='var(--tx)'>${n}</text><text x='70' y='84' text-anchor='middle' font-size='10' fill='var(--mu)'>건</text></svg><div style='font-size:11px;line-height:1.5;min-width:110px'>${e.map(([k,v],i)=>`<div data-tip='${esc(k)}|${v}건 (${Math.round(v/n*100)}%)'><span style='color:${cl[i%cl.length]}'>■</span> ${esc(k)} ${v}건 (${Math.round(v/n*100)}%)</div>`).join('')}</div></div>`:`<div style='color:var(--mu);margin-top:10px'>등록된 사고가 없습니다.</div>`)+`</div>`}
+function lc(a,b,mx){const W=640,H=220,L=34,R=12,T=16,B=26,ys=Math.max(2,mx),x=i=>L+i*(W-L-R)/11,y=v=>T+(H-T-B)*(1-v/ys);
+let g='';for(let k=0;k<=ys;k+=Math.ceil(ys/4)){g+=`<line x1='${L}' x2='${W-R}' y1='${y(k)}' y2='${y(k)}' stroke='var(--bd)'/><text x='${L-6}' y='${y(k)+4}' text-anchor='end' font-size='11' fill='var(--mu)'>${k}</text>`}
+for(let i=0;i<12;i++)g+=`<text x='${x(i)}' y='${H-8}' text-anchor='middle' font-size='11' fill='var(--mu)'>${i+1}월</text>`;
+const ln=(s,c,d)=>`<polyline points='${s.map((v,i)=>x(i)+','+y(v)).join(' ')}' fill='none' stroke='${c}' stroke-width='2.5' stroke-linejoin='round'/>`+s.map((v,i)=>`<circle cx='${x(i)}' cy='${y(v)}' r='3.5' fill='${c}'/>${v?`<text x='${x(i)}' y='${y(v)+d}' text-anchor='middle' font-size='11' font-weight='700' fill='${c}'>${v}</text>`:''}`).join('');
+const hz=a.map((v,i)=>`<rect class='hv' x='${x(i)-(W-L-R)/22}' y='${T}' width='${(W-L-R)/11}' height='${H-T-B}' data-tip='${i+1}월|도급 ${v}건|파견 ${b[i]}건|합계 ${v+b[i]}건'/>`).join('');
+return `<svg viewBox='0 0 ${W} ${H}' style='width:100%;height:auto;max-height:260px'>${g}${ln(a,'var(--nv)',-8)}${ln(b,'#e8833a',17)}${hz}</svg>`}
+function home(){
+const all=Object.entries(db),cnt=k=>all.filter(([x])=>x.startsWith(k+'|')).reduce((a,[,v])=>a+v.length,0);
+const acc=all.filter(([x])=>x.startsWith('3|')).flatMap(([,v])=>v),m=Array(12).fill(0);
+const dj=Array(12).fill(0),pg=Array(12).fill(0);let un=0;
+acc.forEach(r=>{if(String(r.v['년도'])!='2026')return;const n=+String(r.v['발생일']||'').slice(5,7);if(n<1||n>12)return;const t=r.v['도급/파견'];if(t=='도급')dj[n-1]++;else if(t=='파견')pg[n-1]++;else un++});
+const tc={};acc.forEach(r=>{if(String(r.v['년도'])=='2026'){const t=r.v['사고 유형']||'미분류';tc[t]=(tc[t]||0)+1}});
+const mx=Math.max(1,...dj,...pg),tot=all.reduce((a,[,v])=>a+v.length,0);
+$('#mn').innerHTML=`<h2 style="gap:0">[ 2026년 더 케이텍 안전사고 발생 현황 ]</h2>${wsPanel()}<div class="cards">
+<div class="cd"><small>등록된 사업장</small><strong>${cnt(0)}</strong> 개소</div>
+<div class="cd"><small>사고 보고서</small><strong>${acc.length}</strong> 건</div>
+<div class="cd"><small>업로드한 서류 전체</small><strong>${tot-cnt(0)}</strong> 건</div></div>
+<div class="gr"><div class="ch"><b>[월별 사고 발생 현황]</b> <span style="color:var(--mu)">단위: 건</span> &nbsp; <span style="color:var(--nv)">●</span> 도급 &nbsp;<span style="color:#e8833a">●</span> 파견${lc(dj,pg,mx)}${un?`<div style="color:var(--mu);font-size:12px">도급/파견 구분이 없는 ${un}건은 그래프에 넣지 못했습니다.</div>`:''}</div>${dn(tc)}</div>
+<p style="color:var(--mu)">왼쪽 메뉴에서 서류 종류를 골라 등록 버튼으로 파일을 올리세요.</p>${adm&&cmode&&hasLocal()?`<p><button onclick="migrate()">이 브라우저에 저장된 자료를 공유 저장소로 옮기기</button></p>`:''}`}
+const fOf=p=>p.f.filter(q=>!q.f&&!q.x&&!q.d);
+function page(){
+const p=P[cur],k=key(),rows=(db[k]||[]).filter(r=>fOf(p).every(q=>!fq[q.n]||String(r.v[q.n]||'').includes(fq[q.n])));
+const hd=p.f.map(q=>q.n).concat(p.nf?[]:['등록일','결재 상태']).concat(adm?['']:[]);
+$('#mn').innerHTML=`<div class="bc">${p.g?'안전 Monitoring':'안전·보건'}&gt;${p.n}${p.sub?'&gt;'+p.sub[sub]:''}</div><h2>${p.t}</h2>
+<div class="fl">${fOf(p).map(q=>`<label>${q.n}${q.o?`<select data-f="${esc(q.n)}"><option value="">전체</option>${q.o.map(o=>`<option ${fq[q.n]==o?'selected':''}>${o}</option>`).join('')}</select>`:`<input data-f="${esc(q.n)}" value="${esc(fq[q.n]||'')}">`}</label>`).join('')}<button onclick="srch()">검색</button></div>
+<div class="bar"><span>총 ${rows.length}건</span><div><button onclick="toast('엑셀 다운로드는 이 화면에서는 지원되지 않습니다')">엑셀 다운로드</button>${p.n=='사고 보고서'||p.nf?`<button onclick='imp()'>엑셀 일괄 등록</button>`:''}<button onclick="reg()">등록</button></div></div>
+<div class="tw"><table><tr>${hd.map(h=>`<th>${h}</th>`).join('')}</tr>${rows.length?rows.map(r=>`<tr>${p.f.map(q=>`<td>${q.f?(r.file?(r.fid?(r.fw?`<a onclick="openF('${r.id}')">${esc(r.file)}</a>`:/^(https:\/\/|\/_blob\/)/.test(r.furl)?`<a href="${esc(r.furl)}" target="_blank" rel="noopener">${esc(r.file)}</a>`:esc(r.file)):(urls[r.id]?`<a href="${urls[r.id]}" target="_blank" rel="noopener">${esc(r.file)}</a>`:r.fb?`<a onclick="toast('파일을 불러오는 중입니다. 잠시 후 다시 눌러 주세요')">${esc(r.file)}</a>`:esc(r.file))):''):esc(r.v[q.n])}</td>`).join('')}${p.nf?'':`<td>${r.d}</td><td>결재 대기</td>`}${adm?`<td><button onclick="editRec('${r.id}')">수정</button> <button onclick="del('${r.id}',this)">삭제</button></td>`:''}</tr>`).join(''):`<tr><td class="em" colspan="${hd.length}">등록된 서류가 없습니다. 오른쪽 위 등록 버튼으로 추가하세요.</td></tr>`}</table></div>`;pre(rows)}
+function srch(){document.querySelectorAll('[data-f]').forEach(e=>fq[e.dataset.f]=e.value.trim());page()}
+function regOld(){
+const p=P[cur];$('#fm').innerHTML=`<h3>${p.t} 등록${p.sub?' - '+p.sub[sub]:''}</h3>`+p.f.map(q=>`<label>${q.n}${q.f?`<input type="file" name="${esc(q.n)}">`:q.o?`<select name="${esc(q.n)}">${q.o.map(o=>`<option>${o}</option>`).join('')}</select>`:`<input name="${esc(q.n)}" type="${q.d?'date':'text'}" ${q.n=='년도'?'value="2026"':''}>`}</label>`).join('')+`<div class="act"><button type="button" class="g" onclick="$('#dl').close()">취소</button><button type="button" onclick="add()">등록</button></div>`;
+$('#dl').showModal()}
+function addOld(){
+const p=P[cur],v={};let fn='',fl=null;
+p.f.forEach(q=>{const e=$('#fm').elements[q.n];if(q.f){fl=e.files[0];fn=fl?fl.name:''}else v[q.n]=e.value.trim()});
+if(!p.nf&&!fl)return toast('서류 파일을 선택해 주세요');
+const r={id:'r'+Date.now(),v,file:fn,d:new Date().toISOString().slice(0,10)};
+if(fl)urls[r.id]=URL.createObjectURL(fl);
+(db[key()]=db[key()]||[]).unshift(r);save();$('#dl').close();toast('등록했습니다');page()}
+async function del(id,b){if(!adm)return toast('관리자만 삭제할 수 있습니다');if(!b.dataset.a){b.dataset.a=1;b.textContent='정말 삭제?';return}
+const k=key(),r=(db[k]||[]).find(x=>x.id==id);
+if(cmode){if(!await rm(cur,id))return;if(r&&r.fid&&ast)ast.delete(r.fid).catch(()=>{})}else{fdel(id);delete urls[id]}
+db[k]=(db[k]||[]).filter(x=>x.id!=id);save();page()}
+function imp(){const p=P[cur];$('#fm').innerHTML=`<h3>${p.t} 엑셀 일괄 등록</h3><p style='margin:0;line-height:1.6;color:var(--mu)'>${p.nf?'사업장 내용이 들어 있는 시트를 자동으로 찾아 한 줄에 한 곳씩 등록합니다. 제목줄에 필요한 이름은 아래와 같습니다.':'사고 내용이 들어 있는 시트를 자동으로 찾아 한 줄에 한 건씩 등록합니다. 제목줄에 필요한 이름은 아래와 같고, 사고 보고서 칸에는 문서번호, 등록일 칸에는 등록 날짜가 들어갑니다.'}<br><b style='color:var(--tx)'>${p.f.map(q=>q.n).join(' / ')}</b></p><input type='file' id='xf' accept='.xlsx,.xls'><div class='act'><button type='button' class='g' onclick='dl.close()'>취소</button><button type='button' onclick='doImp()'>가져와서 등록</button></div>`;dl.showModal()}
+async function doImpOld(){const f=$('#xf').files[0];if(!f)return toast('엑셀 파일을 선택해 주세요');if(typeof XLSX=='undefined')return toast('엑셀 읽기 기능을 불러오지 못했어요. 새로고침 후 다시 해 주세요');
+try{const wb=XLSX.read(await f.arrayBuffer(),{type:'array',cellDates:true}),rs=XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]],{defval:''}),p=P[cur],nm=s=>String(s).replace(/[\s\/()·]/g,''),mp={};
+p.f.forEach(q=>mp[nm(q.n)]=q);mp['지사']=mp['지사센터'];
+const pad=n=>String(n).padStart(2,'0'),today=new Date().toISOString().slice(0,10);let ok=0,chk=0;const out=[];
+rs.forEach((row,i)=>{const v={};let fn='';
+for(const h in row){const q=mp[nm(h)];if(!q)continue;let x=row[h];
+if(x instanceof Date){const t=new Date(x.getTime()+432e5);x=t.getFullYear()+'-'+pad(t.getMonth()+1)+'-'+pad(t.getDate())}
+x=String(x).trim();
+if(q.d){const m=x.match(/(\d{4})\D+(\d{1,2})\D+(\d{1,2})/);if(m)x=m[1]+'-'+pad(m[2])+'-'+pad(m[3])}
+if(q.f)fn=x;else v[q.n]=x}
+if(!Object.values(v).some(Boolean)&&!fn)return;
+if(!v['년도'])v['년도']='2026';
+p.f.forEach(q=>{if(q.o&&v[q.n]&&!q.o.includes(v[q.n]))chk++});
+out.push({id:'r'+Date.now()+'_'+i,v,file:fn,d:today});ok++});
+if(!ok)return toast('읽을 수 있는 사고 내용이 없습니다. 첫 줄 제목을 확인해 주세요');
+db[key()]=out.concat(db[key()]||[]);save();dl.close();page();
+toast(ok+'건 등록했습니다'+(chk?' (목록에 없는 값 '+chk+'곳은 확인해 주세요)':''))}
+catch(e){toast('엑셀 파일을 읽지 못했습니다. .xlsx 파일인지 확인해 주세요')}}
+async function doImp(){const f=$('#xf').files[0];if(!f)return toast('엑셀 파일을 선택해 주세요');if(typeof XLSX=='undefined')return toast('엑셀 읽기 기능을 불러오지 못했어요. 새로고침 후 다시 해 주세요');
+try{const wb=XLSX.read(await f.arrayBuffer(),{type:'array',cellDates:true}),p=P[cur],nm=s=>String(s).replace(/[\s\/()·]/g,''),cp=s=>String(s).replace(/㈜/g,'(주)').replace(/\s/g,'').toLowerCase(),mp={};
+p.f.forEach(q=>mp[nm(q.n)]=q);mp['지사']=mp['지사센터'];mp['등록일']={reg:1};
+let best=null;
+wb.SheetNames.forEach(sn=>{const a=XLSX.utils.sheet_to_json(wb.Sheets[sn],{header:1,defval:''});a.slice(0,15).forEach((r,i)=>{const c=r.filter(h=>h!==''&&mp[nm(h)]).length;if(c>=4&&(!best||c>best.c))best={c,i,a}})});
+if(!best)return toast('제목줄을 찾지 못했습니다. 첫 줄 제목을 확인해 주세요');
+const hd=best.a[best.i],rs=best.a.slice(best.i+1),pad=n=>String(n).padStart(2,'0'),today=new Date().toISOString().slice(0,10),al={'하이닉스이천운영팀':'SK-Hynix 이천','lgc청주운영팀':'LGC 청주','lgc대산운영팀':'LGC 대산','os1/2팀':'OS1팀','에스케이하이닉스-이천':'SK-Hynix 이천','에스케이하이닉스-청주':'SK-Hynix 청주'};
+const ct={};wb.SheetNames.forEach(sn=>{const a=XLSX.utils.sheet_to_json(wb.Sheets[sn],{header:1,defval:''});a.slice(0,15).forEach((r,i)=>{const c=r.findIndex(h=>nm(h)=='문서번호'),g=r.findIndex(h=>nm(h)=='도급파견');if(c<0||g<0)return;a.slice(i+1).forEach(w=>{const t=String(w[g]).trim();if(w[c]&&t)ct[cp(w[c])]=t})})});
+const ex=new Map();const dkf=(v,fn)=>fn||(p.nf?cp([v['본부'],v['지사(센터)'],v['사업장 명']].join('|')):'');(db[key()]||[]).forEach(r=>{const k=dkf(r.v,r.file);if(k)ex.set(k,r)});let ok=0,chk=0,dup=0,upd=0;const touched=[];const out=[];
+rs.forEach((row,i)=>{const v={};let fn='',rd=today,any=false;
+hd.forEach((h,j)=>{const q=h!==''&&mp[nm(h)];if(!q)return;let x=row[j];
+if(x instanceof Date){const t=new Date(x.getTime()+432e5);x=t.getFullYear()+'-'+pad(t.getMonth()+1)+'-'+pad(t.getDate())}
+x=String(x??'').replace(/\s+/g,' ').trim();if(x)any=true;
+if(q.d||q.reg){const m=x.match(/(\d{4})\D+(\d{1,2})\D+(\d{1,2})/);if(m)x=m[1]+'-'+pad(m[2])+'-'+pad(m[3])}
+if(q.reg){if(/^\d{4}-/.test(x))rd=x;return}
+if(q.f){fn=x;return}
+if(q.n=='년도')x=x.replace(/^\D*(\d{4}).*$/,'$1');
+if(q.n=='산업재해조사표')x=/[○◯Oo]/.test(x)?'작성':'미작성';
+if(q.o){const o=q.o.find(o=>cp(o)==cp(x))||al[cp(x)];if(o)x=o}
+v[q.n]=x});
+if(!any)return;
+if(!v['도급/파견']&&fn){const t=ct[cp(fn)];if(t)v['도급/파견']=t}
+const dk=dkf(v,fn);if(dk&&ex.has(dk)){dup++;const e=ex.get(dk);if(e&&!e.v['도급/파견']&&v['도급/파견']){e.v['도급/파견']=v['도급/파견'];upd++;touched.push(e)}return}
+if(dk)ex.set(dk,null);
+if(!v['년도']&&p.f.some(q=>q.n=='년도'))v['년도']='2026';
+p.f.forEach(q=>{if(q.o&&v[q.n]&&!q.o.includes(v[q.n]))chk++});
+out.push({id:'r'+Date.now().toString(36)+'_'+i+Math.random().toString(36).slice(2,5),v,file:fn,d:rd,s:0,ts:Date.now()-i});ok++});
+if(!ok&&upd){if(cmode)await putAll(cur,touched);save();dl.close();page();return toast(upd+'건에 도급/파견 구분을 채웠습니다')}
+if(!ok)return toast(dup?'이미 모두 등록된 내용입니다 ('+dup+'건)':'읽을 수 있는 내용이 없습니다. 첫 줄 제목을 확인해 주세요');
+db[key()]=out.concat(db[key()]||[]);if(cmode){toast('공유 저장소에 저장하는 중입니다...');await putAll(cur,out.concat(touched))}save();dl.close();page();
+toast(ok+'건 등록했습니다'+(dup?', 이미 등록된 '+dup+'건은 제외'+(upd?' (그중 '+upd+'건은 도급/파견 구분 보완)':''):'')+(chk?', 목록에 없는 값 '+chk+'곳은 확인해 주세요':''))}
+catch(e){toast('엑셀 파일을 읽지 못했습니다. .xlsx 파일인지 확인해 주세요')}}
+function login(){$('#fm').innerHTML=`<h3>관리자 로그인</h3><p style='margin:0;color:var(--mu)'>수정과 삭제는 관리자만 할 수 있습니다.</p><label>비밀번호<input type='password' id='pw' inputmode='numeric' autocomplete='off' onkeydown='if(event.keyCode==13){event.preventDefault();chkPw()}'></label><div class='act'><button type='button' class='g' onclick='dl.close()'>취소</button><button type='button' onclick='chkPw()'>확인</button></div>`;dl.showModal();setTimeout(()=>$('#pw').focus(),50)}
+function chkPw(){if($('#pw').value!=='8508'){$('#pw').value='';return toast('비밀번호가 맞지 않습니다')}adm=true;dl.close();setAd();toast('관리자로 로그인했습니다');cur>=0?page():draw()}
+function logout(){adm=false;setAd();toast('로그아웃했습니다');cur>=0?page():draw()}
+function setAd(){$('#ad').textContent=adm?'관리자 로그아웃':'관리자 로그인'}
+function editRec(id){if(!adm)return;const r=(db[key()]||[]).find(x=>x.id==id);if(r)reg(r)}
+function reg(r){if(r&&!adm)return;eid=r?r.id:null;const p=P[cur],op=(q)=>{const v=r?r.v[q.n]:'',os=(!v||q.o.includes(v))?q.o:[v,...q.o];return os.map(o=>`<option ${o==v?'selected':''}>${esc(o)}</option>`).join('')};
+$('#fm').innerHTML=`<h3>${p.t} ${r?'수정':'등록'}${p.sub?' - '+p.sub[sub]:''}</h3>`+p.f.map(q=>`<label>${q.n}${q.f?`<span><input type='file' name='${esc(q.n)}'>${r&&r.file?`<small style='color:var(--mu)'>현재: ${esc(r.file)}</small>`:''}</span>`:q.o?`<select name='${esc(q.n)}'>${op(q)}</select>`:`<input name='${esc(q.n)}' type='${q.d?'date':'text'}' value='${r?esc(r.v[q.n]??''):(q.n=='년도'?'2026':'')}'>`}</label>`).join('')+`<div class='act'><button type='button' class='g' onclick='dl.close()'>취소</button><button type='button' onclick='add()'>${r?'저장':'등록'}</button></div>`;dl.showModal()}
+async function add(){const p=P[cur],v={};let fn='',fl=null;
+p.f.forEach(q=>{const e=$('#fm').elements[q.n];if(q.f){fl=e.files[0];fn=fl?fl.name:''}else v[q.n]=e.value.trim()});
+const list=db[key()]=db[key()]||[],r0=eid?list.find(x=>x.id==eid):null;
+if(eid&&!adm)return;
+if(!p.nf&&!fl&&!(r0&&r0.file))return toast('서류 파일을 선택해 주세요');
+let fi=null;
+if(fl&&cmode){const ck=chkF(fl);if(ck)return toast(ck);toast('파일을 공유 저장소에 올리는 중입니다...');fi=await upFile(fl);if(fi.err)return toast(fi.err)}
+if(r0){r0.v=v;if(fl){r0.file=fn;if(cmode){if(r0.fid&&ast)ast.delete(r0.fid).catch(()=>{});Object.assign(r0,fi)}else{r0.fb=(await fput(r0.id,fl))?1:0;urls[r0.id]=URL.createObjectURL(fl)}}
+eid=null;dl.close();if(cmode){if(!await put(cur,r0))return}else save();toast('수정했습니다');return page()}
+const r={id:'r'+Date.now()+Math.random().toString(36).slice(2,6),v,file:fn,d:new Date().toISOString().slice(0,10),s:p.sub?sub:0,ts:Date.now()};
+let okF=true;
+if(fl){if(cmode)Object.assign(r,fi);else{okF=await fput(r.id,fl);r.fb=okF?1:0;urls[r.id]=URL.createObjectURL(fl)}}
+list.unshift(r);dl.close();
+if(cmode){if(!await put(cur,r)){db[key()]=list.filter(x=>x!==r);return page()}}else save();
+toast(okF?'등록했습니다':'등록했지만 파일을 보관하지 못했습니다. 새로고침하면 파일을 열 수 없어요');page()}
+const idb=()=>new Promise((res,rej)=>{try{const q=indexedDB.open('ktec-files',1);q.onupgradeneeded=()=>q.result.createObjectStore('f');q.onsuccess=()=>res(q.result);q.onerror=()=>rej(q.error)}catch(e){rej(e)}});
+const fput=async(id,blob)=>{try{const d=await idb();await new Promise((res,rej)=>{const t=d.transaction('f','readwrite');t.objectStore('f').put(blob,id);t.oncomplete=res;t.onerror=()=>rej(t.error);t.onabort=()=>rej(t.error)});return true}catch(e){return false}};
+const fget=async id=>{try{const d=await idb();return await new Promise((res,rej)=>{const q=d.transaction('f').objectStore('f').get(id);q.onsuccess=()=>res(q.result);q.onerror=()=>rej(q.error)})}catch(e){return null}};
+const fdel=async id=>{try{const d=await idb();d.transaction('f','readwrite').objectStore('f').delete(id)}catch(e){}};
+async function pre(rows){let n=0;for(const r of rows){if(r.fb&&!urls[r.id]){const b=await fget(r.id);if(b){urls[r.id]=URL.createObjectURL(b);n++}}}if(n)page()}
+const OKX=['pdf','png','jpg','jpeg','gif','webp','xlsx','docx','pptx','csv','txt','zip'],MT={pdf:'application/pdf',png:'image/png',jpg:'image/jpeg',jpeg:'image/jpeg',gif:'image/gif',webp:'image/webp'};
+const fext=f=>(String(f.name||'').split('.').pop()||'').toLowerCase();
+function chkF(f){const x=fext(f);if(!OKX.includes(x))return '이 형식(.'+x+')은 공유 저장소에 올릴 수 없습니다. PDF, 이미지, 엑셀(xlsx), 워드(docx), 파워포인트(pptx), csv, txt, zip으로 올려 주세요. 한글(hwp) 파일은 zip으로 묶어서 올려 주세요.';if(f.size>15e6)return '파일이 너무 큽니다 (15MB 이하만 올릴 수 있습니다)';return ''}
+async function upFile(f){if(!ast)return {err:'파일 올리기 권한이 없습니다. 공유 설정에서 편집(Contributor) 이상 권한이 필요합니다'};
+try{const x=fext(f);if(MT[x]){const a=await ast.upload(f.type===MT[x]?f:new Blob([f],{type:MT[x]}));return {fid:a.id,furl:a.url,ft:MT[x],fw:0}}
+const u=new Uint8Array(await f.arrayBuffer());let t='';for(let i=0;i<u.length;i+=32768)t+=String.fromCharCode.apply(null,u.subarray(i,i+32768));
+const a=await ast.upload(new Blob([btoa(t)],{type:'text/plain'}));return {fid:a.id,furl:a.url,ft:f.type||'application/octet-stream',fw:1}}
+catch(e){return {err:e&&e.code=='too_large'?'파일이 너무 큽니다 (15MB 이하)':e&&e.code=='quota_or_state'?'공유 저장 공간이 가득 찼습니다':'파일을 올리지 못했습니다 ('+(e&&e.code||'오류')+')'}}}
+async function put(i,r){try{await cdb.collection('r'+i).doc(r.id).set({s:r.s||0,v:r.v,file:r.file||'',fid:r.fid||'',furl:r.furl||'',ft:r.ft||'',fw:r.fw||0,d:r.d||'',ts:r.ts||Date.now()});return true}catch(e){toast(e&&e.code=='invalid_argument'?'저장 권한이 없습니다. 공유 설정에서 편집(Contributor) 이상 권한이 필요합니다':'공유 저장소에 저장하지 못했습니다 ('+(e&&e.code||'오류')+')');return false}}
+async function rm(i,id){try{await cdb.collection('r'+i).doc(id).delete();return true}catch(e){toast('삭제하지 못했습니다 ('+(e&&e.code||'오류')+')');return false}}
+async function putAll(i,rs){let n=0;for(let k=0;k<rs.length;k+=5){const res=await Promise.all(rs.slice(k,k+5).map(r=>put(i,r)));n+=res.filter(Boolean).length;if(res.includes(false))break}return n}
+function rebuild(){const nd={};Object.keys(cloud).forEach(i=>{(cloud[i]||[]).slice().sort((a,b)=>(b.ts||0)-(a.ts||0)).forEach(r=>{const k=i+'|'+(Number(r.s)||0);(nd[k]=nd[k]||[]).push(r)})});db=nd;draw()}
+async function openF(id){const r=Object.values(db).flat().find(x=>x.id==id);if(!r)return;if(!dnl)return toast('이 화면에서는 파일을 내려받을 수 없습니다');toast('파일을 불러오는 중입니다...');
+try{let t;try{t=await (await fetch('/_blob/'+r.fid)).text()}catch(e){if(!/^(https:\/\/|\/_blob\/)/.test(r.furl))throw e;t=await (await fetch(r.furl)).text()}
+const bin=atob(t.trim()),u=new Uint8Array(bin.length);for(let i=0;i<bin.length;i++)u[i]=bin.charCodeAt(i);
+await dnl.save({filename:r.file,data:new Blob([u],{type:r.ft})});toast('저장했습니다')}
+catch(e){toast(e&&e.code=='declined'?'저장을 취소했습니다':e&&e.code=='rejected_extension'?'이 형식은 내려받을 수 없습니다':'파일을 불러오지 못했습니다')}}
+const hasLocal=()=>{try{return Object.values(ldb).some(a=>a&&a.length)&&localStorage.getItem('ktec-migrated')!='1'}catch(e){return false}};
+async function migrate(){if(!cmode||!adm)return;const items=[];Object.entries(ldb).forEach(([k,rs])=>{const [i,s]=k.split('|');(rs||[]).forEach(r=>items.push([+i,+s,r]))});
+if(!items.length)return toast('옮길 자료가 없습니다');let ok=0,skip=0,nf=0;
+for(const [i,s,r] of items){if((cloud[i]||[]).some(x=>x.id==r.id)){skip++;continue}
+const rec=Object.assign({},r,{s,ts:r.ts||Date.parse(r.d)||Date.now()});
+if(r.fb){const b=await fget(r.id);if(b){const fi=await upFile(b);if(fi&&!fi.err)Object.assign(rec,fi);else nf++}else nf++}
+delete rec.fb;if(!await put(i,rec))return;ok++;toast('옮기는 중입니다... '+ok+'/'+items.length)}
+try{localStorage.setItem('ktec-migrated','1')}catch(e){}
+toast(ok+'건을 옮겼습니다'+(skip?', 이미 있는 '+skip+'건 제외':'')+(nf?', 파일을 옮기지 못한 '+nf+'건':''));draw()}
+async function initCloud(){try{if(!window.claude||!claude.use)return;cdb=await claude.use('db');ast=await claude.use('assets');dnl=await claude.use('downloads')}catch(e){}
+if(!cdb){db=ldb;draw();return}cmode=true;
+for(let i=0;i<P.length;i++)cdb.collection('r'+i).limit(1000).onSnapshot(sn=>{cloud[i]=sn.docs.filter(d=>/^[\w-]+$/.test(d.id)).map(d=>Object.assign({id:d.id},JSON.parse(JSON.stringify(d.data()))));rebuild()},e=>{if(!bad){bad=1;toast('공유 저장소를 읽지 못했습니다 ('+(e&&e.code||'오류')+')')}})}
+let wsq={b:'',j:'',n:''};
+const nz=s=>String(s||'').replace(/\s+/g,'').toLowerCase();
+function wsPanel(){const op=(a,v)=>`<option value=''>전체</option>`+a.map(o=>`<option ${o==v?'selected':''}>${esc(o)}</option>`).join('');
+return `<div class='ch' style='margin-bottom:12px'><b>[사업장 검색]</b> <span style='color:var(--mu)'>위험성 평가, 안전보건 관리계획서, 비상대피훈련, 선임계 등록 현황을 한 번에 확인합니다</span><div class='fl' style='margin:12px 0 0'><label>본부<select onchange='wsq.b=this.value'>${op(bu,wsq.b)}</select></label><label>지사(센터)<select onchange='wsq.j=this.value'>${op(ji,wsq.j)}</select></label><label>사업장 명<input style='width:200px' value='${esc(wsq.n)}' oninput='wsq.n=this.value' onkeydown='if(event.keyCode==13)wsSearch()'></label><button onclick='wsSearch()'>검색</button></div></div>`}
+function wsFind(){const m=new Map(),ents=Object.entries(db).map(([k,rs])=>{const [i,s]=k.split('|').map(Number);return [i,s,rs||[]]}).filter(([i])=>[0,2,4,5,6].includes(i)).sort((a,b)=>(a[0]?1:0)-(b[0]?1:0));
+ents.forEach(([i,s,rs])=>rs.forEach(r=>{const k=nz(r.v['사업장 명']);if(!k)return;let e=m.get(k);if(!e){e={name:r.v['사업장 명'],bh:r.v['본부']||'',jp:r.v['지사(센터)']||'',docs:{}};m.set(k,e)}else{e.bh=e.bh||r.v['본부']||'';e.jp=e.jp||r.v['지사(센터)']||''}if(i)(e.docs[i+'|'+s]=e.docs[i+'|'+s]||[]).push(r)}));
+const q=nz(wsq.n);
+return [...m.values()].filter(e=>(!wsq.b||e.bh==wsq.b)&&(!wsq.j||e.jp==wsq.j)&&(!q||nz(e.name).includes(q))).sort((a,b)=>{const x=bu.indexOf(a.bh),y=bu.indexOf(b.bh);return (x<0?99:x)-(y<0?99:y)||a.name.localeCompare(b.name,'ko')})}
+function wsSearch(){const L=wsFind(),lat=a=>a.slice().sort((x,y)=>String(y.d||'').localeCompare(String(x.d||'')))[0];
+const wc=a=>a&&a.length?`<b style='color:#1a7f4b'>등록</b><br><small>${esc(lat(a).d||'')}${a.length>1?' · '+a.length+'건':''}</small>`:`<span style='color:#c0392b'>미등록</span>`;
+const cols=['2|0','6|0','4|0','4|1','5|0','5|1','5|2','5|3'];
+$('#wst').textContent='사업장 서류 등록 현황 · '+L.length+'곳';
+$('#wsb').innerHTML=L.length?`<div class='tw'><table><tr><th rowspan='2'>본부</th><th rowspan='2'>지사(센터)</th><th rowspan='2'>사업장 명</th><th rowspan='2'>위험성 평가</th><th rowspan='2'>안전보건<br>관리계획서</th><th colspan='2'>비상대피훈련</th><th colspan='4'>선임계</th></tr><tr><th>상반기</th><th>하반기</th><th>안전보건<br>관리책임자</th><th>안전관리자</th><th>보건관리자</th><th>관리감독자</th></tr>${L.map(e=>`<tr><td>${esc(e.bh)}</td><td>${esc(e.jp)}</td><td style='text-align:left'>${esc(e.name)}</td>${cols.map(c=>`<td>${wc(e.docs[c])}</td>`).join('')}</tr>`).join('')}</table></div>`:`<div class='em'>검색 결과가 없습니다. 사업장 관리에 사업장을 등록하거나 서류를 등록하면 여기에 나타납니다.</div>`;
+wsd.showModal()}
+function setGrp(g){grp=g;go(g?G[1][0]:-1)}
+const tp=document.createElement('div');tp.id='tip';document.body.appendChild(tp);
+const shTip=ev=>{const e=ev.target.closest&&ev.target.closest('[data-tip]');if(!e){tp.style.display='none';return}tp.innerHTML=e.dataset.tip.split('|').map((s,i)=>s.startsWith('합계')?`<div style='font-weight:700;font-size:13px;border-top:1px solid var(--bd);margin-top:3px;padding-top:3px'>${s}</div>`:i?`<div>${s}</div>`:`<div><b>${s}</b></div>`).join('');tp.style.display='block';const w=tp.offsetWidth;tp.style.left=Math.max(4,Math.min(ev.clientX+14,window.innerWidth-w-8))+'px';tp.style.top=(ev.clientY+14)+'px'};
+document.addEventListener('mousemove',shTip);document.addEventListener('click',shTip);
+draw();initCloud();
+</script></body></html>
